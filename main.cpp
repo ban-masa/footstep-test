@@ -19,6 +19,13 @@ void mouse(int button, int state, int x, int y)
 
 void keyboard(unsigned char key, int x, int y)
 {
+  Square sq1(100, 100, 10, 50, 30);
+  Square sq2(0, 0, 0, 50, 30);
+  glColor3d(0.0, 0.0, 0.0);
+  sq1.draw();
+  glColor3d(1.0, 0.0, 0.0);
+  sq2.draw();
+  glFlush();
 }
 
 void init(void)
