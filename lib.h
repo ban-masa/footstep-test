@@ -5,5 +5,5 @@
 #include "Square.hpp"
 #include "ZMPViewer.hpp"
 
-constexpr int WIDTH = 320;
-constexpr int HEIGHT = 240;
+constexpr int WIDTH = 500;
+constexpr int HEIGHT = 400;
