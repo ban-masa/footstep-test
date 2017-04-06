@@ -1,17 +1,30 @@
 #include "lib.h"
 
-ZMPViewer zv;
+//ZMPViewer zv;
+CogTrajectory ct;
+
+//void display(void)
+//{
+//  glClear(GL_COLOR_BUFFER_BIT);
+//  zv.calc_footsteps(10, 1, 0.0, 0.05);
+//  glColor3d(0.0, 0.0, 0.0);
+//  zv.draw_cog_track(WIDTH, HEIGHT);
+//  glColor3d(1.0, 0.0, 0.0);
+//  zv.draw_fs(WIDTH, HEIGHT);
+//  glColor3d(0.0, 0.0, 0.0);
+//  zv.draw_fixed_fs(WIDTH, HEIGHT);
+//  glFlush();
+//}
 
 void display(void)
 {
   glClear(GL_COLOR_BUFFER_BIT);
-  zv.calc_footsteps(10, 1, 0.0, 0.05);
+  ct.calc_cog_trajectory();
   glColor3d(0.0, 0.0, 0.0);
-  zv.draw_cog_track(WIDTH, HEIGHT);
+  ct.draw_cog_track(WIDTH, HEIGHT);
   glColor3d(1.0, 0.0, 0.0);
-  zv.draw_fs(WIDTH, HEIGHT);
+  ct.draw_fs(WIDTH, HEIGHT);
   glColor3d(0.0, 0.0, 0.0);
-  zv.draw_fixed_fs(WIDTH, HEIGHT);
   glFlush();
 }
 
@@ -56,11 +69,10 @@ int main(int argc, char *argv[])
   glutMouseFunc(mouse);
   glutKeyboardFunc(keyboard);
   init();
-  if (!zv.read(argv[1])) {
+  if (!ct.read(argv[1])) {
     std::cerr << "Error" << std::endl;
     exit(1);
   }
-  zv.show_param();
   glutMainLoop();
   return 0;
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Square.hpp"
 #include "ZMPViewer.hpp"
+#include "CogTrajectory.hpp"
 
 constexpr int WIDTH = 500;
 constexpr int HEIGHT = 400;
